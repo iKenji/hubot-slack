@@ -6,4 +6,4 @@ module.exports = (robot) ->
         return msg.send('画像検索に失敗しました...')
       data = JSON.parse(body)[0]
       # robot.logger.info data
-      msg.send "画像の様子です: http://img.tiqav.com/#{data.id}.#{data.ext}" )
+      msg.send "http://img.tiqav.com/#{data.id}.#{data.ext}" )
