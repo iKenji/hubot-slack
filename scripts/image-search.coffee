@@ -1,3 +1,7 @@
+# Description:
+#   omit
+# Commands:
+
 module.exports = (robot) ->
   robot.respond /rimg (.*)/i, (msg) ->
     request = require('request')
