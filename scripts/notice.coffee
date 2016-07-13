@@ -12,13 +12,17 @@ module.exports = (robot) ->
   # Crontabの設定方法と基本一緒 *(sec) *(min) *(hour) *(day) *(month) *(day of the week)
   new cronJob('0 0 19 * * 1-5', () ->
     # ↑のほうで宣言しているsendメソッドを実行する
-    send '#freetalk', "hubotがhubotで定時をお知らせします"
+    send '#freetalk', "hubotがhubotで定時(19:00)をお知らせします :beer:"
   ).start()
 
   new cronJob('0 0 12 * * 1-5', () ->
-    send '#freetalk', "hubotがhubotで12時をお知らせします。"
+    send '#freetalk', "hubotがhubotで12時をお知らせします。:baby:"
   ).start()
 
   new cronJob('0 30 18 * * 1-5', () ->
-    send '#freetalk', "業務報告を書いて帰る支度を始めましょう"
+    send '#freetalk', "業務報告を書いて帰る支度を始めましょうi :rage:"
+  ).start()
+  
+  new cronJob('0 00 10 * * 1-5', () ->
+    send '#freetalk', "おはようございます！朝礼を開始します:raising_hand:"
   ).start()
