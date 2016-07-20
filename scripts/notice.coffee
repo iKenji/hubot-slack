@@ -19,10 +19,10 @@ module.exports = (robot) ->
     send '#freetalk', "hubotがhubotで12時をお知らせします。:baby:"
   ).start()
 
-  new cronJob('0 30 18 * * 1-5', () ->
-    send '#freetalk', "業務報告を書いて帰る支度を始めましょうi :rage:"
+  new cronJob('0 0 18 * * 1-5', () ->
+    send '#freetalk', "hubotがhubotで定時(18:00)をお知らせします :beer:"
   ).start()
   
-  new cronJob('0 00 10 * * 1-5', () ->
+  new cronJob('0 59 09 * * 1-5', () ->
     send '#freetalk', "おはようございます！朝礼を開始します:raising_hand:"
   ).start()
