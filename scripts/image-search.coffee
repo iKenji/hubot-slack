@@ -3,7 +3,7 @@
 # Commands:
 
 module.exports = (robot) ->
-  robot.respond /rimg (.*)/i, (msg) ->
+  robot.respond /.*rimg.?(.*)/i, (msg) ->
     request = require('request')
     request.get("http://api.tiqav.com/search.json?q=#{msg.match[1]}", (error, response, body) ->
       if error or response.statusCode != 200
