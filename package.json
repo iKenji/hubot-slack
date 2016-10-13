@@ -18,8 +18,9 @@
     "hubot-rules": "^0.1.1",
     "hubot-shipit": "^0.2.0",
     "hubot-slack": "^3.4.2",
-    "request": "^2.72.0",
-    "cron": "^1.1.0"
+    "cron": "^1.1.0",
+    "japanese-public-holiday": "0.0.1",
+    "request": "^2.72.0"
   },
   "engines": {
     "node": "0.10.x"
