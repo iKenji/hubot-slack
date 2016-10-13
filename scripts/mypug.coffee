@@ -15,8 +15,9 @@ module.exports = (robot) ->
       .get() (err, res, body) ->
         msg.send JSON.parse(body).pug
 
-  robot.hear /パグボム( (\d+))?/i, (msg) ->
-    count = msg.match[2] || 5
+  robot.hear /パグボム.*/i, (msg) ->
+    count = 2
+    # 上のhearと合わせて $count++される
     msg.http("http://pugme.herokuapp.com/bomb?count=" + count)
       .get() (err, res, body) ->
         msg.send pug for pug in JSON.parse(body).pugs
