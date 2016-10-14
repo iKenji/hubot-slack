@@ -1,7 +1,7 @@
 #  Description
 #   omit
 # 定期処理をするオブジェクトを宣言
-JapaneseHoliday = require('japanese-public-holiday')
+japaneseHoliday = require('japanese-public-holiday')
 cronJob = require('cron').CronJob
 
 module.exports = (robot) ->
@@ -29,7 +29,6 @@ module.exports = (robot) ->
   new cronJob('0 0 10 * * 1-5', () ->
     today = new Date
     if checkIsNotHoliday(today)
-
       send '#freetalk', "おはようございます！' + today.getFullYear() + “/” +  today.getMonth() + 1 + “/”+ today.getDate()  + “/” + today.getDay())  + ' の朝礼を開始します:raising_hand:"
   ).start()
 
