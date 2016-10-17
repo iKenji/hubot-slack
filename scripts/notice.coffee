@@ -29,7 +29,7 @@ module.exports = (robot) ->
   new cronJob('0 0 10 * * 1-5', () ->
     today = new Date
     if checkIsNotHoliday(today)
-      send '#freetalk', 'おはようございます！' + today.getFullYear() + '/' +  today.getMonth() + 1 + '/'+ today.getDate()  + '/' + today.getDay())  + ' の朝礼を開始します:raising_hand:'
+      send '#freetalk', 'おはようございます！' + today.getFullYear() + '/' +  today.getMonth() + 1 + '/'+ today.getDate()  + '/' + today.getDay()  + ' の朝礼を開始します:raising_hand:'
   ).start()
 
 #休日でない場合にtrueを返す
