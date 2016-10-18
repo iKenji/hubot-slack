@@ -3,6 +3,8 @@
 # 定期処理をするオブジェクトを宣言
 japaneseHoliday = require('japanese-public-holiday')
 cronJob = require('cron').CronJob
+weekdays = ["日","月","火","水","木","金","土"]
+today = new Date
 
 module.exports = (robot) ->
 
@@ -13,7 +15,6 @@ module.exports = (robot) ->
   # Crontabの設定方法と基本一緒 *(sec) *(min) *(hour) *(day) *(month) *(day of the week)
   new cronJob('0 0 19 * * 1-5', () ->
     # ↑のほうで宣言しているsendメソッドを実行する
-    today = new Date
     if checkIsNotHoliday(today)
       send '#freetalk', "hubotがhubotで 19:00 をお知らせします :beer:"
   ).start()
@@ -27,9 +28,8 @@ module.exports = (robot) ->
   ).start()
 
   new cronJob('0 0 10 * * 1-5', () ->
-    today = new Date
     if checkIsNotHoliday(today)
-      send '#freetalk', 'おはようございます！' + today.getFullYear() + '/' +  today.getMonth() + 1 + '/'+ today.getDate()  + '/' + today.getDay()  + ' の朝礼を開始します:raising_hand:'
+      send '#freetalk', 'おはようございます！' + today.getFullYear() + '/' +  (today.getMonth() + 1) + '/'+ today.getDate()  + ' (' + weekdays[today.getDay()]  + ') の朝礼を開始します:raising_hand:'
   ).start()
 
 #休日でない場合にtrueを返す
